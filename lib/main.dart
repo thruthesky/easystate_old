@@ -44,13 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             StreamBuilder(
               stream: CountModel.count,
-              builder: (context, snapshot) {
-                if (!snapshot.hasData) return CircularProgressIndicator();
-                return Text(
-                  snapshot.data.toString(),
-                  style: Theme.of(context).textTheme.headline4,
-                );
-              },
+              builder: (context, snapshot) => Text(
+                snapshot.data.toString(),
+                style: Theme.of(context).textTheme.headline4,
+              ),
             ),
           ],
         ),
